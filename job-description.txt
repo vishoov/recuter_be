@@ -1,76 +1,21 @@
-Role for a highly skilled production-level creative assistant
+Key Responsibilities
+Develop new user-facing features using HTML, CSS, and JavaScript.
 
-Must have advanced skills in:
+Implement responsive design principles to ensure seamless experiences across devices and browsers.
 
-Photoshop
+Translate UI/UX wireframes and design mockups into functional, interactive web pages.
 
-Lightroom
+Optimize applications for maximum speed, scalability, and performance.
 
-Canva
+Ensure cross-browser compatibility and resolve layout or interaction issues.
 
-Virtual Staging
+Write clean, maintainable, and reusable code following best practices.
 
-Position demands fast, accurate execution within brand standards and tight timelines
+Collaborate with designers, back-end developers, and other stakeholders to deliver high-quality products.
 
-Not suitable for beginners or general design support
+Integrate front-end code with RESTful APIs and third-party services.
 
-🛠 Core Responsibilities
-Virtual Staging:
+Conduct code reviews and provide constructive feedback to team members.
 
-Realistic furniture placement, lighting and shadows, file prep
+Stay updated with the latest front-end technologies, trends, and best practices.
 
-Lightroom Editing:
-
-Batch tone matching, white balance, exposure correction, export
-
-Photoshop Tasks:
-
-Sky replacements
-
-Landscaping enhancements
-
-Object removal
-
-Template overlays
-
-Canva Work:
-
-Precise updates within brand templates (no deviations)
-
-File Preparation:
-
-Deliver high-res, client-ready assets
-
-Task Execution:
-
-Follow detailed instructions (written/video)
-
-Participate in team check-ins
-
-✅ Required Qualifications
-Expert-level skills in Photoshop & Lightroom
-
-Proven virtual staging experience
-
-Canva proficiency with brand-focused design discipline
-
-Ability to follow directions precisely and quickly
-
-Strong file organization and naming practices
-
-Reliable internet and modern computer setup
-
-Clear English communication (neutral/westernized accent)
-
-Functional mic and webcam
-
-🤝 Ideal Candidate Profile
-3+ years in production design (preferably real estate, photography, or visual media)
-
-Strong portfolio in virtual staging/real estate enhancement
-
-Comfortable with remote team collaboration
-
-Familiar with tools like Mattermost, Zoom, Google Meet, Google Drive
-
-Self-managed and quality-driven

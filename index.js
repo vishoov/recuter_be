@@ -1,11 +1,10 @@
 import express from 'express';
 import multer from 'multer';
 import cors from 'cors';
-import * as pdfjsLib from 'pdfjs-dist/legacy/build/pdf.mjs';
 import path from 'path';
 import 'dotenv/config';
-const pdfjs = pdfjsLib;
 import { OpenAI } from 'openai';
+import pdfParse from 'pdf-parse';
 
 const perplexity = new OpenAI({
     apiKey: process.env.PERPLEXITY_API_KEY,
@@ -18,15 +17,13 @@ app.use(cors());
 const upload = multer({ storage: multer.memoryStorage() });
 
 async function extractText(pdfBuffer) {
-    const uint8Array = new Uint8Array(pdfBuffer);
-    const doc = await pdfjs.getDocument({ data: uint8Array }).promise;
-    let text = '';
-    for (let i = 1; i <= doc.numPages; i++) {
-        const page = await doc.getPage(i);
-        const content = await page.getTextContent();
-        text += content.items.map(item => item.str).join(' ') + '\n';
+    try {
+        const data = await pdfParse(pdfBuffer);
+        return data.text;
+    } catch (error) {
+        console.error('Error extracting text from PDF:', error);
+        throw new Error('Failed to extract text from PDF');
     }
-    return text;
 }
 
 app.get("/", (req, res) => {
@@ -42,6 +39,7 @@ app.post('/analyze', upload.fields([
         let jdText = '';
         const ext = path.extname(jdFile.originalname).toLowerCase();
         console.log(`Received job description file: ${jdFile.originalname} (${ext})`);
+
         if (ext === '.txt') {
             jdText = jdFile.buffer.toString('utf-8');
         } else if (ext === '.pdf') {
@@ -64,7 +62,8 @@ app.post('/analyze', upload.fields([
                 ...analysis
             });
         }
-
+        console.log(`JD Text : ${jdText.substring(0, 100)}...`); // Log first 100 chars of JD for debugging
+        console.log(`Resume Text : ${candidates.map(c => c.name).join(', ')}`);
         candidates.sort((a, b) => b.score - a.score);
         console.log(`Processed ${candidates.length} resumes for job description: ${jdFile.originalname}`);
         res.json(candidates);
